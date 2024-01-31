@@ -1,0 +1,23 @@
+version: "3.7"
+services:
+  mysql:
+    image: mysql:8.0.34
+    environment:
+      MYSQL_ROOT_PASSWORD: admin123
+      MYSQL_DATABASE: post_db
+      MYSQL_USER: johndoe
+      MYSQL_PASSWORD: john123
+    ports:
+      - 3306:3306
+    volumes:
+      - mysql_db_data:/var/lib/mysql
+
+  adminer_container:
+    image: adminer:latest
+    environment:
+      ADMINER_DEFAULT_SERVER: mysql
+    ports:
+      - 8080:8080
+
+volumes:
+  mysql_db_data:
