@@ -28,6 +28,10 @@ const defineConfig = (): ExpoConfig => ({
       backgroundColor: "#1F104A",
     },
   },
+  web: {
+    bundler: "metro",
+    output: "server",
+  },
   // extra: {
   //   eas: {
   //     projectId: "your-eas-project-id",
@@ -37,7 +41,14 @@ const defineConfig = (): ExpoConfig => ({
     tsconfigPaths: true,
     typedRoutes: true,
   },
-  plugins: ["expo-router"],
+  plugins: [
+    [
+      "expo-router",
+      {
+        origin: "http://localhost:8081/",
+      },
+    ],
+  ],
 });
 
 export default defineConfig;
