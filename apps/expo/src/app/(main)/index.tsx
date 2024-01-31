@@ -95,6 +95,7 @@ function CreatePost() {
 }
 
 export default function Index() {
+  const [data, setData] = useState("default");
   const utils = api.useUtils();
 
   const postQuery = api.post.all.useQuery();
@@ -102,6 +103,12 @@ export default function Index() {
   const deletePostMutation = api.post.delete.useMutation({
     onSettled: () => utils.post.all.invalidate().then(),
   });
+
+  const fetchHello = async () => {
+    const response = await fetch("/hello");
+    const data: any = await response.json();
+    setData(data.hello);
+  };
 
   return (
     <SafeAreaView className=" bg-background">
@@ -113,7 +120,11 @@ export default function Index() {
         </Text>
 
         <Pressable
-          onPress={() => void utils.post.all.invalidate()}
+          // onPress={() => void utils.post.all.invalidate()}
+          onPress={() => {
+            fetchHello();
+            void utils.post.all.invalidate();
+          }}
           className="flex items-center rounded-lg bg-primary p-2"
         >
           <Text className="text-foreground"> Refresh posts</Text>
@@ -123,6 +134,7 @@ export default function Index() {
           <Text className="font-semibold italic text-primary">
             Press on a post
           </Text>
+          <Text className="text-foreground">Hi {data}</Text>
         </View>
 
         <FlashList
