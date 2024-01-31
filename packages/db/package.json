@@ -17,8 +17,8 @@
     "with-env": "dotenv -e ../../.env --"
   },
   "dependencies": {
-    "@planetscale/database": "^1.13.0",
-    "drizzle-orm": "^0.29.3"
+    "drizzle-orm": "^0.29.3",
+    "mysql2": "^3.9.1"
   },
   "devDependencies": {
     "@acme/eslint-config": "workspace:^0.2.0",

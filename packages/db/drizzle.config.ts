@@ -9,7 +9,6 @@ const uri = [
   process.env.DB_HOST,
   ":3306/",
   process.env.DB_NAME,
-  '?ssl={"rejectUnauthorized":true}',
 ].join("");
 
 export default {
