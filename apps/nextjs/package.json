@@ -16,7 +16,7 @@
   "dependencies": {
     "@acme/api": "workspace:^0.1.0",
     "@acme/db": "workspace:^0.1.0",
-    "@acme/ui": "workspace:^0.1.0",
+    "@acme/web": "workspace:^0.1.0",
     "@acme/validators": "workspace:^0.1.0",
     "@t3-oss/env-nextjs": "^0.7.1",
     "@tanstack/react-query": "^5.17.7",

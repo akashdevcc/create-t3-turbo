@@ -21,5 +21,12 @@
     "next/dist/client/router.d.ts"
   ],
   "typescript.tsdk": "node_modules/typescript/lib",
-  "conventionalCommits.scopes": ["api", "webapp", "db", "devtools", "expoapp"]
+  "conventionalCommits.scopes": [
+    "api",
+    "webapp",
+    "db",
+    "devtools",
+    "expoapp",
+    "web"
+  ]
 }
