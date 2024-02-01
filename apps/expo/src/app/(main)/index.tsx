@@ -17,7 +17,7 @@ function PostCard(props: {
         <Link
           asChild
           href={{
-            pathname: "/post/[id]",
+            pathname: "/(main)/post/[id]",
             params: { id: props.post.id },
           }}
         >
