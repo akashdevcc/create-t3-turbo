@@ -1,1 +1,3 @@
-export const name = "native";
+import { Post } from "./components";
+
+export { Post };
