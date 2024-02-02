@@ -2,11 +2,11 @@ import { useLocalSearchParams } from "expo-router";
 
 import { Post } from "@acme/native";
 
-import { api } from "~/utils/api";
+import { trpc } from "~/api";
 
 export default function () {
   const { id } = useLocalSearchParams<{ id: string }>();
-  const { data } = api.post.byId.useQuery({ id: parseInt(id) });
+  const { data } = trpc.post.byId.useQuery({ id: parseInt(id) });
 
   if (!data) return null;
 

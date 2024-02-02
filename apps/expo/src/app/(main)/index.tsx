@@ -4,8 +4,8 @@ import { SafeAreaView } from "react-native-safe-area-context";
 import { Link, Stack } from "expo-router";
 import { FlashList } from "@shopify/flash-list";
 
-import type { RouterOutputs } from "~/utils/api";
-import { api } from "~/utils/api";
+import type { RouterOutputs } from "~/api";
+import { trpc } from "~/api";
 
 function PostCard(props: {
   post: RouterOutputs["post"]["all"][number];
@@ -37,12 +37,12 @@ function PostCard(props: {
 }
 
 function CreatePost() {
-  const utils = api.useUtils();
+  const utils = trpc.useUtils();
 
   const [title, setTitle] = useState("");
   const [content, setContent] = useState("");
 
-  const { mutate, error } = api.post.create.useMutation({
+  const { mutate, error } = trpc.post.create.useMutation({
     async onSuccess() {
       setTitle("");
       setContent("");
@@ -96,11 +96,11 @@ function CreatePost() {
 
 export default function Index() {
   const [data, setData] = useState("default");
-  const utils = api.useUtils();
+  const utils = trpc.useUtils();
 
-  const postQuery = api.post.all.useQuery();
+  const postQuery = trpc.post.all.useQuery();
 
-  const deletePostMutation = api.post.delete.useMutation({
+  const deletePostMutation = trpc.post.delete.useMutation({
     onSettled: () => utils.post.all.invalidate().then(),
   });
 
