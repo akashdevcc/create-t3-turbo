@@ -233,6 +233,25 @@ importers:
         specifier: ^5.3.3
         version: 5.3.3
 
+  apps/server:
+    dependencies:
+      '@acme/api':
+        specifier: workspace:*
+        version: link:../../packages/api
+      '@acme/db':
+        specifier: workspace:*
+        version: link:../../packages/db
+    devDependencies:
+      '@acme/eslint-config':
+        specifier: workspace:*
+        version: link:../../tooling/eslint
+      '@acme/prettier-config':
+        specifier: workspace:*
+        version: link:../../tooling/prettier
+      '@acme/tsconfig':
+        specifier: workspace:*
+        version: link:../../tooling/typescript
+
   packages/api:
     dependencies:
       '@acme/db':

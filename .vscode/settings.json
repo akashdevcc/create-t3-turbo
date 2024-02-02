@@ -28,6 +28,7 @@
     "devtools",
     "expoapp",
     "web",
-    "native"
+    "native",
+    "server"
   ]
 }
