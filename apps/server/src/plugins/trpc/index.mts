@@ -4,13 +4,14 @@ import {
 } from "@trpc/server/adapters/fastify";
 import fp from "fastify-plugin";
 
-import type { AppRouter } from "./router";
-import { createContext } from "./context";
-import { appRouter } from "./router";
+import type { AppRouter } from "@acme/api";
+import { appRouter } from "@acme/api";
+
+import { createContext } from "./context.mjs";
 
 export default fp<FastifyTRPCPluginOptions<AppRouter>>(async (fastify) => {
   fastify.register(fastifyTRPCPlugin, {
-    prefix: "/trpc",
+    prefix: "/api/trpc",
     trpcOptions: {
       router: appRouter,
       createContext,
