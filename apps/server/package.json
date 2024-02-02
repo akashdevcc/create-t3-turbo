@@ -3,14 +3,11 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "npm run build:ts && concurrently -k -p \"[{name}]\" -n \"TypeScript,App\" -c \"yellow.bold,cyan.bold\" \"npm:watch:ts\" \"npm:dev:start\"",
-    "build": "echo 'Add build script here'",
+    "dev": "tsx watch src",
+    "build": "rm -rf build && tsx esbuild.ts",
     "test": "npm run build:ts && tsc -p test/tsconfig.json && c8 node --test -r ts-node/register test/**/*.ts",
     "lint": "echo 'Add lint script here'",
-    "start": "npm run build:ts && fastify start -l info dist/app.js",
-    "build:ts": "tsc",
-    "watch:ts": "tsc -w",
-    "dev:start": "fastify start --ignore-watch=.ts$ -w -l info -P dist/app.js"
+    "start": "npm run build && node build"
   },
   "dependencies": {
     "@acme/api": "workspace:*",
@@ -28,10 +25,9 @@
     "@acme/prettier-config": "workspace:*",
     "@acme/tsconfig": "workspace:*",
     "@types/node": "^20.10.6",
-    "concurrently": "^8.2.2",
-    "fastify-cli": "^6.1.0",
-    "fastify-tsconfig": "^2.0.0",
-    "ts-node": "^10.4.0",
+    "esbuild": "0.17.14",
+    "tiny-glob": "0.2.9",
+    "tsx": "3.12.6",
     "typescript": "^5.3.3"
   },
   "description": "This project was bootstrapped with Fastify-CLI.",
