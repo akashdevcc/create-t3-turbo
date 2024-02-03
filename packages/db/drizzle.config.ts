@@ -12,7 +12,7 @@ const uri = [
 ].join("");
 
 export default {
-  schema: "./src/schema",
+  schema: "../schema/src/schema",
   driver: "mysql2",
   dbCredentials: { uri },
   tablesFilter: ["acme_*"],

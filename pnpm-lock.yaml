@@ -290,6 +290,9 @@ importers:
       '@acme/db':
         specifier: workspace:^0.1.0
         version: link:../db
+      '@acme/schema':
+        specifier: workspace:^
+        version: link:../schema
       '@acme/validators':
         specifier: workspace:^0.1.0
         version: link:../validators
@@ -324,6 +327,9 @@ importers:
 
   packages/db:
     dependencies:
+      '@acme/schema':
+        specifier: workspace:^
+        version: link:../schema
       drizzle-orm:
         specifier: ^0.29.3
         version: 0.29.3(mysql2@3.9.1)
@@ -383,6 +389,40 @@ importers:
       '@acme/tsconfig':
         specifier: workspace:^0.1.0
         version: link:../../tooling/typescript
+      eslint:
+        specifier: ^8.56.0
+        version: 8.56.0
+      prettier:
+        specifier: ^3.1.1
+        version: 3.1.1
+      typescript:
+        specifier: ^5.3.3
+        version: 5.3.3
+
+  packages/schema:
+    dependencies:
+      drizzle-orm:
+        specifier: ^0.29.3
+        version: 0.29.3(mysql2@3.9.1)
+      mysql2:
+        specifier: ^3.9.1
+        version: 3.9.1
+    devDependencies:
+      '@acme/eslint-config':
+        specifier: workspace:^0.2.0
+        version: link:../../tooling/eslint
+      '@acme/prettier-config':
+        specifier: workspace:^0.1.0
+        version: link:../../tooling/prettier
+      '@acme/tsconfig':
+        specifier: workspace:^0.1.0
+        version: link:../../tooling/typescript
+      dotenv-cli:
+        specifier: ^7.3.0
+        version: 7.3.0
+      drizzle-kit:
+        specifier: ^0.20.13
+        version: 0.20.13
       eslint:
         specifier: ^8.56.0
         version: 8.56.0
@@ -2134,8 +2174,8 @@ packages:
   /@esbuild-kit/esm-loader@2.5.5:
     resolution: {integrity: sha512-Qwfvj/qoPbClxCRNuac1Du01r9gvNOT+pMYtJDapfB1eoGN1YlJ1BixLyL9WVENRx5RXgNLdfYdx/CuswlGhMw==}
     dependencies:
-      '@esbuild-kit/core-utils': 3.1.0
-      get-tsconfig: 4.6.2
+      '@esbuild-kit/core-utils': 3.3.2
+      get-tsconfig: 4.7.2
     dev: true
 
   /@esbuild/android-arm64@0.17.14:
@@ -7929,12 +7969,6 @@ packages:
       call-bind: 1.0.2
       get-intrinsic: 1.2.1
     dev: false
-
-  /get-tsconfig@4.6.2:
-    resolution: {integrity: sha512-E5XrT4CbbXcXWy+1jChlZmrmCwd5KGx502kDCXJJ7y898TtWW9FwoG5HfOLVRKmlmDGkWN2HM9Ho+/Y8F0sJDg==}
-    dependencies:
-      resolve-pkg-maps: 1.0.0
-    dev: true
 
   /get-tsconfig@4.7.2:
     resolution: {integrity: sha512-wuMsz4leaj5hbGgg4IvDU0bqJagpftG5l5cXIAvo8uZrqn0NJqwtfupTN00VnkQJPcIRrxYrm1Ue24btpCha2A==}
