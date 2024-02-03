@@ -7,7 +7,7 @@ import fp from "fastify-plugin";
 import type { AppRouter } from "@acme/api";
 import { appRouter } from "@acme/api";
 
-import { createContext } from "./context.mjs";
+import { createContext } from "./context.js";
 
 export default fp<FastifyTRPCPluginOptions<AppRouter>>(async (fastify) => {
   fastify.register(fastifyTRPCPlugin, {
