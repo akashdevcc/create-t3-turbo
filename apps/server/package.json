@@ -2,12 +2,14 @@
   "name": "@acme/server",
   "version": "0.1.0",
   "private": true,
+  "type": "module",
   "scripts": {
-    "dev": "tsx watch src",
-    "build": "rm -rf build && tsx esbuild.ts",
+    "dev": "pnpm with-env tsx watch src",
+    "build": "echo 'Add build script here'",
     "test": "npm run build:ts && tsc -p test/tsconfig.json && c8 node --test -r ts-node/register test/**/*.ts",
     "lint": "echo 'Add lint script here'",
-    "start": "npm run build && node build"
+    "start": "npm run build && node build",
+    "with-env": "dotenv -e ../../.env --"
   },
   "dependencies": {
     "@acme/api": "workspace:*",
@@ -25,8 +27,7 @@
     "@acme/prettier-config": "workspace:*",
     "@acme/tsconfig": "workspace:*",
     "@types/node": "^20.10.6",
-    "esbuild": "0.17.14",
-    "tiny-glob": "0.2.9",
+    "dotenv-cli": "^7.3.0",
     "tsx": "3.12.6",
     "typescript": "^5.3.3"
   },
