@@ -1,8 +1,9 @@
 {
-  "name": "@acme/db",
-  "version": "0.1.0",
+  "name": "@acme/native",
   "private": true,
+  "version": "0.1.0",
   "type": "module",
+  "react-native": "./src/index.ts",
   "exports": {
     ".": "./src/index.ts"
   },
@@ -11,31 +12,27 @@
     "clean": "rm -rf .turbo node_modules",
     "format": "prettier --check . --ignore-path ../../.gitignore",
     "lint": "eslint .",
-    "push": "pnpm with-env drizzle-kit push:mysql",
-    "studio": "pnpm with-env drizzle-kit studio",
-    "typecheck": "tsc --noEmit",
-    "with-env": "dotenv -e ../../.env --"
-  },
-  "dependencies": {
-    "@acme/schema": "workspace:^",
-    "drizzle-orm": "^0.29.3",
-    "mysql2": "^3.9.1"
+    "typecheck": "tsc --noEmit"
   },
   "devDependencies": {
     "@acme/eslint-config": "workspace:^0.2.0",
     "@acme/prettier-config": "workspace:^0.1.0",
     "@acme/tsconfig": "workspace:^0.1.0",
-    "dotenv-cli": "^7.3.0",
-    "drizzle-kit": "^0.20.13",
     "eslint": "^8.56.0",
     "prettier": "^3.1.1",
     "typescript": "^5.3.3"
   },
   "eslintConfig": {
-    "root": true,
     "extends": [
       "@acme/eslint-config/base"
     ]
   },
-  "prettier": "@acme/prettier-config"
+  "prettier": "@acme/prettier-config",
+  "dependencies": {
+    "expo-router": "~3.4.6",
+    "nativewind": "~4.0.13",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "react-native": "~0.73.2"
+  }
 }

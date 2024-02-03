@@ -1,5 +1,5 @@
 {
-  "name": "@acme/db",
+  "name": "@acme/schema",
   "version": "0.1.0",
   "private": true,
   "type": "module",
@@ -17,7 +17,6 @@
     "with-env": "dotenv -e ../../.env --"
   },
   "dependencies": {
-    "@acme/schema": "workspace:^",
     "drizzle-orm": "^0.29.3",
     "mysql2": "^3.9.1"
   },

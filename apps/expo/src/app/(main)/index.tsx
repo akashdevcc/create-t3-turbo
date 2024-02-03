@@ -4,8 +4,8 @@ import { SafeAreaView } from "react-native-safe-area-context";
 import { Link, Stack } from "expo-router";
 import { FlashList } from "@shopify/flash-list";
 
-import type { RouterOutputs } from "~/utils/api";
-import { api } from "~/utils/api";
+import type { RouterOutputs } from "~/api";
+import { trpc } from "~/api";
 
 function PostCard(props: {
   post: RouterOutputs["post"]["all"][number];
@@ -17,7 +17,7 @@ function PostCard(props: {
         <Link
           asChild
           href={{
-            pathname: "/post/[id]",
+            pathname: "/(main)/post/[id]",
             params: { id: props.post.id },
           }}
         >
@@ -37,12 +37,12 @@ function PostCard(props: {
 }
 
 function CreatePost() {
-  const utils = api.useUtils();
+  const utils = trpc.useUtils();
 
   const [title, setTitle] = useState("");
   const [content, setContent] = useState("");
 
-  const { mutate, error } = api.post.create.useMutation({
+  const { mutate, error } = trpc.post.create.useMutation({
     async onSuccess() {
       setTitle("");
       setContent("");
@@ -95,13 +95,20 @@ function CreatePost() {
 }
 
 export default function Index() {
-  const utils = api.useUtils();
+  const [data, setData] = useState("default");
+  const utils = trpc.useUtils();
 
-  const postQuery = api.post.all.useQuery();
+  const postQuery = trpc.post.all.useQuery();
 
-  const deletePostMutation = api.post.delete.useMutation({
+  const deletePostMutation = trpc.post.delete.useMutation({
     onSettled: () => utils.post.all.invalidate().then(),
   });
+
+  const fetchHello = async () => {
+    const response = await fetch("/hello");
+    const data: any = await response.json();
+    setData(data.hello);
+  };
 
   return (
     <SafeAreaView className=" bg-background">
@@ -113,7 +120,11 @@ export default function Index() {
         </Text>
 
         <Pressable
-          onPress={() => void utils.post.all.invalidate()}
+          // onPress={() => void utils.post.all.invalidate()}
+          onPress={() => {
+            fetchHello();
+            void utils.post.all.invalidate();
+          }}
           className="flex items-center rounded-lg bg-primary p-2"
         >
           <Text className="text-foreground"> Refresh posts</Text>
@@ -123,6 +134,7 @@ export default function Index() {
           <Text className="font-semibold italic text-primary">
             Press on a post
           </Text>
+          <Text className="text-foreground">Hi {data}</Text>
         </View>
 
         <FlashList
