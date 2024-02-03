@@ -29,6 +29,7 @@
     "expoapp",
     "web",
     "native",
-    "server"
+    "server",
+    "schema"
   ]
 }
