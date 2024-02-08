@@ -236,10 +236,10 @@ importers:
   apps/server:
     dependencies:
       '@acme/api':
-        specifier: workspace:*
+        specifier: workspace:^0.1.0
         version: link:../../packages/api
       '@acme/db':
-        specifier: workspace:*
+        specifier: workspace:^0.1.0
         version: link:../../packages/db
       '@fastify/autoload':
         specifier: ^5.0.0
@@ -264,13 +264,13 @@ importers:
         version: 3.22.4
     devDependencies:
       '@acme/eslint-config':
-        specifier: workspace:*
+        specifier: workspace:^0.2.0
         version: link:../../tooling/eslint
       '@acme/prettier-config':
-        specifier: workspace:*
+        specifier: workspace:^0.1.0
         version: link:../../tooling/prettier
       '@acme/tsconfig':
-        specifier: workspace:*
+        specifier: workspace:^0.1.0
         version: link:../../tooling/typescript
       '@types/node':
         specifier: ^20.10.6
@@ -291,7 +291,7 @@ importers:
         specifier: workspace:^0.1.0
         version: link:../db
       '@acme/schema':
-        specifier: workspace:^
+        specifier: workspace:^0.1.0
         version: link:../schema
       '@acme/validators':
         specifier: workspace:^0.1.0
@@ -328,7 +328,7 @@ importers:
   packages/db:
     dependencies:
       '@acme/schema':
-        specifier: workspace:^
+        specifier: workspace:^0.1.0
         version: link:../schema
       drizzle-orm:
         specifier: ^0.29.3
@@ -346,6 +346,9 @@ importers:
       '@acme/tsconfig':
         specifier: workspace:^0.1.0
         version: link:../../tooling/typescript
+      '@types/node':
+        specifier: ^20.10.6
+        version: 20.11.7
       dotenv-cli:
         specifier: ^7.3.0
         version: 7.3.0
