@@ -1,14 +1,8 @@
 import type { inferRouterInputs, inferRouterOutputs } from "@trpc/server";
 
-// import type {} from "@trpc/server";
-// import type {} from "drizzle-orm/mysql2";
-// import type {} from "@acme/schema";
-
 import type { AppRouter } from "./root";
 import { appRouter } from "./root";
-import { createTRPCContext } from "./trpc";
-
-// import { createCallerFactory } from "./trpc";
+import { createCallerFactory, createTRPCContext } from "./trpc";
 
 /**
  * Create a server-side caller for the tRPC API
@@ -17,8 +11,7 @@ import { createTRPCContext } from "./trpc";
  * const res = await trpc.post.all();
  *       ^? Post[]
  */
-// const createCaller: RouterCaller<AppRouter["_def"]> =
-//   createCallerFactory(appRouter);
+const createCaller = createCallerFactory(appRouter);
 
 /**
  * Inference helpers for input types
@@ -36,5 +29,5 @@ type RouterInputs = inferRouterInputs<AppRouter>;
  **/
 type RouterOutputs = inferRouterOutputs<AppRouter>;
 
-export { createTRPCContext, appRouter };
+export { createTRPCContext, appRouter, createCaller };
 export type { AppRouter, RouterInputs, RouterOutputs };

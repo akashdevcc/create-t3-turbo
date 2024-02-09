@@ -3,25 +3,15 @@
   "version": "0.1.0",
   "private": true,
   "type": "module",
-  "main": "./dist/index.js",
-  "types": "./dist/index.d.ts",
-  "files": [
-    "dist/**",
-    "src/**"
-  ],
   "exports": {
     ".": "./src/index.ts"
   },
   "license": "MIT",
   "scripts": {
-    "build": "tsup",
-    "clean": "rm -rf .turbo node_modules",
+    "clean": "rimraf .turbo node_modules",
     "format": "prettier --check . --ignore-path ../../.gitignore",
     "lint": "eslint .",
-    "push": "pnpm with-env drizzle-kit push:mysql",
-    "studio": "pnpm with-env drizzle-kit studio",
-    "typecheck": "tsc --noEmit",
-    "with-env": "dotenv -e ../../.env --"
+    "typecheck": "tsc --noEmit"
   },
   "dependencies": {
     "drizzle-orm": "^0.29.3"
@@ -30,11 +20,9 @@
     "@acme/eslint-config": "workspace:^0.2.0",
     "@acme/prettier-config": "workspace:^0.1.0",
     "@acme/tsconfig": "workspace:^0.1.0",
-    "dotenv-cli": "^7.3.0",
-    "drizzle-kit": "^0.20.13",
     "eslint": "^8.56.0",
     "prettier": "^3.1.1",
-    "tsup": "^8.0.1",
+    "rimraf": "^5.0.5",
     "typescript": "^5.3.3"
   },
   "eslintConfig": {
