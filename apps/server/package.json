@@ -8,7 +8,7 @@
     "with-env": "dotenv -e ../../.env --",
     "build": "pnpm with-env tsup",
     "start": "pnpm with-env node dist/index.cjs",
-    "build:watch": "pnpm with-env tsup --watch .",
+    "build:watch": "pnpm with-env tsup --watch . --watch ../../packages/api/src/ --watch ../../packages/db/src/ --watch ../../packages/schema/src/",
     "start:watch": "nodemon --watch dist --exec pnpm start",
     "dev": "rimraf dist && pnpm build && run-p build:watch start:watch",
     "dev:old": "pnpm with-env tsx watch src",
