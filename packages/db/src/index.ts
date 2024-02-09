@@ -12,6 +12,6 @@ const config: ConnectionOptions = {
   database: process.env.DB_NAME!,
 };
 
-const connection = await mysql.createConnection(config);
+const connection = mysql.createPool(config);
 
 export const db = drizzle(connection, { schema: schema, mode: "default" });

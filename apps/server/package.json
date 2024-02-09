@@ -3,17 +3,21 @@
   "version": "0.1.0",
   "private": true,
   "type": "module",
+  "main": "dist/index.cjs",
   "scripts": {
-    "dev": "pnpm with-env tsx watch src",
-    "build": "echo 'Add build script here'",
+    "with-env": "dotenv -e ../../.env --",
+    "build": "pnpm with-env tsup",
+    "start": "pnpm with-env node dist/index.cjs",
+    "build:watch": "pnpm with-env tsup --watch . --watch ../../packages/api/src/ --watch ../../packages/db/src/ --watch ../../packages/schema/src/",
+    "start:watch": "nodemon --watch dist --exec pnpm start",
+    "dev": "rimraf dist && pnpm build && run-p build:watch start:watch",
+    "dev:old": "pnpm with-env tsx watch src",
     "test": "npm run build:ts && tsc -p test/tsconfig.json && c8 node --test -r ts-node/register test/**/*.ts",
-    "lint": "echo 'Add lint script here'",
-    "start": "npm run build && node build",
-    "with-env": "dotenv -e ../../.env --"
+    "lint": "echo 'Add lint script here'"
   },
   "dependencies": {
-    "@acme/api": "workspace:*",
-    "@acme/db": "workspace:*",
+    "@acme/api": "workspace:^0.1.0",
+    "@acme/db": "workspace:^0.1.0",
     "@fastify/autoload": "^5.0.0",
     "@fastify/sensible": "^5.0.0",
     "@trpc/server": "11.0.0-next-beta.236",
@@ -23,16 +27,19 @@
     "zod": "^3.22.4"
   },
   "devDependencies": {
-    "@acme/eslint-config": "workspace:*",
-    "@acme/prettier-config": "workspace:*",
-    "@acme/tsconfig": "workspace:*",
+    "@acme/eslint-config": "workspace:^0.2.0",
+    "@acme/prettier-config": "workspace:^0.1.0",
+    "@acme/tsconfig": "workspace:^0.1.0",
     "@types/node": "^20.10.6",
     "dotenv-cli": "^7.3.0",
+    "nodemon": "^3.0.3",
+    "npm-run-all": "^4.1.5",
+    "rimraf": "^5.0.5",
+    "tsup": "^8.0.1",
     "tsx": "3.12.6",
     "typescript": "^5.3.3"
   },
   "description": "This project was bootstrapped with Fastify-CLI.",
-  "main": "app.ts",
   "directories": {
     "test": "test"
   },
