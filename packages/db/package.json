@@ -3,11 +3,18 @@
   "version": "0.1.0",
   "private": true,
   "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist/**",
+    "src/**"
+  ],
   "exports": {
     ".": "./src/index.ts"
   },
   "license": "MIT",
   "scripts": {
+    "build": "pnpm with-env tsup",
     "clean": "rm -rf .turbo node_modules",
     "format": "prettier --check . --ignore-path ../../.gitignore",
     "lint": "eslint .",
@@ -30,6 +37,7 @@
     "drizzle-kit": "^0.20.13",
     "eslint": "^8.56.0",
     "prettier": "^3.1.1",
+    "tsup": "^8.0.1",
     "typescript": "^5.3.3"
   },
   "eslintConfig": {

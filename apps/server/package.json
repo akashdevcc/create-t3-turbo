@@ -3,12 +3,13 @@
   "version": "0.1.0",
   "private": true,
   "type": "module",
+  "main": "dist/index.js",
   "scripts": {
     "dev": "pnpm with-env tsx watch src",
-    "build": "echo 'Add build script here'",
+    "build": "pnpm with-env tsup",
     "test": "npm run build:ts && tsc -p test/tsconfig.json && c8 node --test -r ts-node/register test/**/*.ts",
     "lint": "echo 'Add lint script here'",
-    "start": "npm run build && node build",
+    "start": "pnpm run build && pnpm with-env node dist/index.cjs",
     "with-env": "dotenv -e ../../.env --"
   },
   "dependencies": {
@@ -28,11 +29,11 @@
     "@acme/tsconfig": "workspace:^0.1.0",
     "@types/node": "^20.10.6",
     "dotenv-cli": "^7.3.0",
+    "tsup": "^8.0.1",
     "tsx": "3.12.6",
     "typescript": "^5.3.3"
   },
   "description": "This project was bootstrapped with Fastify-CLI.",
-  "main": "app.ts",
   "directories": {
     "test": "test"
   },
