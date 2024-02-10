@@ -41,7 +41,7 @@ packages
   ├─ schema
   |   └─ Schema for SQL DB
   ├─ validators
-  |   └─ Logging for server apps using pino
+  |   └─ Zod Validators to be used accross the apps
   └─ web
       └─ Start of a UI package for the webapp using shadcn-ui
 tooling
@@ -55,12 +55,7 @@ tooling
       └─ shared tsconfig you can extend from
 ```
 
-> In this template, we use `@acme` as a placeholder for package names. As a user, you might want to replace it with your own organization or project name. You can use find-and-replace to change all the instances of `@acme` to something like `@my-company` or `@project-name`.
-
 ## Quick Start
-
-> **Note**
-> The [db](./packages/db) package is preconfigured to use PlanetScale and is **edge-bound** with the [database.js](https://github.com/planetscale/database-js) driver. If you're using something else, make the necesary modifications to the [schema](./packages/db/schema) as well as the [client](./packages/db/index.ts) and the [drizzle config](./packages/db/drizzle.config.ts). If you want to switch to non-edge database driver, remove `export const runtime = "edge";` [from all pages and api routes](https://github.com/t3-oss/create-t3-turbo/issues/634#issuecomment-1730240214).
 
 To get it running, follow the steps below:
 
@@ -73,10 +68,9 @@ pnpm i
 # Configure environment variables
 # There is an `.env.example` in the root directory you can use for reference
 cp .env.example .env
-
-# Push the Drizzle schema to the database
-pnpm db:push
 ```
+
+> TODO: @akash To be updated from down here.
 
 ### 2. Configure Expo `dev`-script
 
