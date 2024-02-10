@@ -30,6 +30,7 @@
     "web",
     "native",
     "server",
-    "schema"
+    "schema",
+    "logging"
   ]
 }

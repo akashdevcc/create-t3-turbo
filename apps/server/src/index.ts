@@ -6,7 +6,9 @@ import { appRouter } from "@acme/api";
 import { createContext } from "./plugins/trpc/context.js";
 
 const fastify = Fastify({
-  logger: true,
+  logger: {
+    level: "info",
+  },
 });
 
 void fastify.register(fastifyTRPCPlugin, {
