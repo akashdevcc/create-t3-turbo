@@ -339,9 +339,6 @@ importers:
 
   packages/db:
     dependencies:
-      '@acme/logging':
-        specifier: workspace:^
-        version: link:../logging
       '@acme/schema':
         specifier: workspace:^0.1.0
         version: link:../schema
@@ -351,9 +348,6 @@ importers:
       mysql2:
         specifier: ^3.9.1
         version: 3.9.1
-      pino:
-        specifier: ^8.18.0
-        version: 8.18.0
     devDependencies:
       '@acme/eslint-config':
         specifier: workspace:^0.2.0

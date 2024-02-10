@@ -1,0 +1,19 @@
+version: "3.7"
+services:
+  server:
+    container_name: server
+    build:
+      context: .
+      args:
+        - SCOPE=@acme
+        - APP=server
+    environment:
+      NODE_ENV: development
+      MAIN: dist/index.cjs
+      DB_HOST: database
+      DB_NAME: ${DB_NAME}
+      DB_USERNAME: ${DB_USERNAME}
+      DB_PASSWORD: ${DB_PASSWORD}
+    restart: always
+    ports:
+      - 3000:3000
