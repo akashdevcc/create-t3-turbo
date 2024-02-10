@@ -56,6 +56,8 @@ WORKDIR /app/apps/${APP}
 ARG PORT=3000
 ENV PORT=${PORT}
 ENV NODE_ENV=production
+ENV MAIN=dist/index.js
+
 EXPOSE ${PORT}
 
-CMD node dist/index.cjs
+CMD node ${MAIN}
