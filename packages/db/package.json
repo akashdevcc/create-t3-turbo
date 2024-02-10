@@ -6,7 +6,6 @@
   "exports": {
     ".": "./src/index.ts"
   },
-  "license": "MIT",
   "scripts": {
     "with-env": "dotenv -e ../../.env --",
     "clean": "rimraf .turbo node_modules",

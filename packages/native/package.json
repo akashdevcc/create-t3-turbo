@@ -7,7 +7,6 @@
   "exports": {
     ".": "./src/index.ts"
   },
-  "license": "MIT",
   "scripts": {
     "clean": "rimraf .turbo node_modules",
     "format": "prettier --check . --ignore-path ../../.gitignore",

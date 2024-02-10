@@ -1,28 +1,12 @@
-# create-t3-turbo
-
-> **Note**
-> Due to high demand, this repo now uses the `app` directory with some new experimental features. If you want to use the more traditional `pages` router, [check out the repo before the update](https://github.com/t3-oss/create-t3-turbo/tree/414aff131ca124573e721f3779df3edb64989fd4).
-
-> **Note**
-> OAuth deployments are now working for preview deployments. Read [deployment guide](https://github.com/t3-oss/create-t3-turbo#auth-proxy) and [check out the source](./apps/auth-proxy) to learn more!
-
-## Installation
-
-There are two ways of initializing an app using the `create-t3-turbo` starter. You can either use this repository as a template:
-
-![use-as-template](https://github.com/t3-oss/create-t3-turbo/assets/51714798/bb6c2e5d-d8b6-416e-aeb3-b3e50e2ca994)
-
-or use Turbo's CLI to init your project (use PNPM as package manager):
-
-```bash
-npx create-turbo@latest -e https://github.com/t3-oss/create-t3-turbo
-```
+# Sparta - Monorepo of Spartan Solar
 
 ## About
 
-Ever wondered how to migrate your T3 application into a monorepo? Stop right here! This is the perfect starter repo to get you running with the perfect stack!
+This will be the monorepo of next-gen application architecture for Spartan Solar.
 
-It uses [Turborepo](https://turborepo.org) and contains:
+## Structure
+
+This monorepo uses [Turborepo](https://turborepo.org) and contains:
 
 ```text
 .github
@@ -31,28 +15,34 @@ It uses [Turborepo](https://turborepo.org) and contains:
 .vscode
   └─ Recommended extensions and settings for VSCode users
 apps
-  ├─ auth-proxy
-  |   ├─ Nitro server to proxy OAuth requests in preview deployments
-  |   └─ Uses Auth.js Core
   ├─ expo
   |   ├─ Expo SDK 49
   |   ├─ React Native using React 18
   |   ├─ Navigation using Expo Router
   |   ├─ Tailwind using Nativewind
   |   └─ Typesafe API calls using tRPC
-  └─ next.js
-      ├─ Next.js 14
-      ├─ React 18
-      ├─ Tailwind CSS
-      └─ E2E Typesafe API Server & Client
+  ├─ next.js
+  |    ├─ Next.js 14
+  |    ├─ React 18
+  |    ├─ Tailwind CSS
+  |    └─ tRPC 11 based E2E Typesafe API Server & Client
+  └─ server
+       ├─ Fastify 4
+       └─ tRPC 11 based E2E Typesafe API Server
 packages
   ├─ api
   |   └─ tRPC v11 router definition
-  ├─ auth
-  |   └─ Authentication using next-auth. **NOTE: Only for Next.js app, not Expo**
   ├─ db
-  |   └─ Typesafe db calls using Drizzle & Planetscale
-  └─ ui
+  |   └─ Typesafe SQL DB calls using Drizzle
+  ├─ logging
+  |   └─ Logging for server apps using pino
+  ├─ native
+  |   └─ ReactNative UI package for the expoapp
+  ├─ schema
+  |   └─ Schema for SQL DB
+  ├─ validators
+  |   └─ Logging for server apps using pino
+  └─ web
       └─ Start of a UI package for the webapp using shadcn-ui
 tooling
   ├─ eslint
