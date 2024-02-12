@@ -31,7 +31,7 @@ Multi-stage builds allow us to create optimized Docker images by breaking down t
 
 Let’s see how we can achieve our goal using the following Dockerfile:
 
-```sh
+```bash
 ARG NODE_VERSION=18.18.0
 
 # Alpine image
@@ -107,7 +107,7 @@ First of all, to have a single Dockerfile that can be used to build multiple pro
 
 ## Base image for build
 
-```sh
+```bash
 # Setup pnpm and turbo on the alpine base
 FROM alpine as base
 RUN npm install pnpm turbo --global
@@ -118,7 +118,7 @@ Here we take the `alpine` image as a base. Install `turbo` and `pnpm` globally u
 
 ## Pruning
 
-```sh
+```bash
 RUN turbo prune --scope=${PROJECT} --docker
 ```
 
@@ -132,7 +132,7 @@ The `prune` command will generate a folder called `out` with the following insid
 
 ## Installing dependencies
 
-```sh
+```bash
 # Copy lockfile and package.json's of isolated subworkspace
 COPY --from=pruner /app/out/pnpm-lock.yaml ./pnpm-lock.yaml
 COPY --from=pruner /app/out/pnpm-workspace.yaml ./pnpm-workspace.yaml
@@ -148,7 +148,7 @@ This piece copies the pruned lockfile, `package.json` files of the pruned worksp
 
 ## Building
 
-```sh
+```bash
 # Copy source code of isolated subworkspace
 COPY --from=pruner /app/out/full/ .
 
@@ -167,7 +167,7 @@ The last `RUN` command removes all `src` folders, so that source files will not 
 
 ## Final production image
 
-```sh
+```bash
 # Final image
 FROM alpine AS runner
 ARG PROJECT
@@ -192,7 +192,7 @@ For the final image, we are using a node-alpine base image with minimal dependen
 
 Next, we create a non-root user for our container as it is not a good idea to run containers as root.
 
-```sh
+```bash
 COPY --from=builder --chown=nodejs:nodejs /app .
 WORKDIR /app/apps/${PROJECT}
 ```
@@ -205,7 +205,7 @@ Another best practice is to set `NODE_ENV=production` for your production images
 
 You can build the final image using the following command
 
-```sh
+```bash
 docker build -t api:latest --build-arg PROJECT=api .
 ```
 
