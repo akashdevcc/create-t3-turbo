@@ -78,14 +78,18 @@ To get it running, follow the steps below:
   npm install -g pnpm@8.15.0
   ```
 
-### 2. Setup dependencies
+### 2. Clone the repository
+
+Clone this repository to your machine by your preferred method (HTTPS / SSH / GitHub CLI).
+
+### 3. Setup dependencies
 
 ```bash
 # Install dependencies
 pnpm i
 ```
 
-### 3. Configure environment variables for development
+### 4. Configure environment variables for development
 
 ```bash
 # There is an `.env.example` in the root directory you can use for reference
@@ -101,7 +105,7 @@ DB_USERNAME='johndoe'
 DB_PASSWORD='john123'
 ```
 
-### 3. Development Workflow
+### 5. Development Workflow
 
 Both frontend and backend development workflow supports "Hot Reload", so developers will not have to restart the scripts to reflect their development changes.
 
