@@ -29,10 +29,10 @@
   },
   "prettier": "@acme/prettier-config",
   "dependencies": {
-    "expo-router": "~3.4.6",
+    "expo-router": "~3.4.7",
     "nativewind": "~4.0.13",
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "react-native": "~0.73.2"
+    "react-native": "~0.73.4"
   }
 }
