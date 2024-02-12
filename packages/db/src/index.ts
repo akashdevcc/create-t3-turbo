@@ -1,5 +1,6 @@
+import type { ConnectionOptions } from "mysql2/promise";
 import { drizzle } from "drizzle-orm/mysql2";
-import mysql, { ConnectionOptions } from "mysql2/promise";
+import mysql from "mysql2/promise";
 
 import { schema } from "@acme/schema";
 

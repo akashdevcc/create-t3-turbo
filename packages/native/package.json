@@ -25,6 +25,9 @@
   "eslintConfig": {
     "extends": [
       "@acme/eslint-config/base"
+    ],
+    "ignorePatterns": [
+      "types/nativewind-env.d.ts"
     ]
   },
   "prettier": "@acme/prettier-config",

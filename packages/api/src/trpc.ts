@@ -25,7 +25,7 @@ import { db } from "@acme/db";
  *
  * @see https://trpc.io/docs/server/context
  */
-export const createTRPCContext = async () => {
+export const createTRPCContext = () => {
   // const source = opts.headers.get("x-trpc-source") ?? "unknown";
 
   // console.log(">>> tRPC Request from", source);
