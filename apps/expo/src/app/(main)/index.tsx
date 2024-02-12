@@ -37,7 +37,7 @@ function PostCard(props: {
 }
 
 function CreatePost() {
-  const utils = trpc.useUtils();
+  const trpcUtils = trpc.useUtils();
 
   const [title, setTitle] = useState("");
   const [content, setContent] = useState("");
@@ -46,7 +46,7 @@ function CreatePost() {
     async onSuccess() {
       setTitle("");
       setContent("");
-      await utils.post.all.invalidate();
+      await trpcUtils.post.all.invalidate();
     },
   });
 
@@ -95,12 +95,12 @@ function CreatePost() {
 }
 
 export default function Index() {
-  const utils = trpc.useUtils();
+  const trpcUtils = trpc.useUtils();
 
   const postQuery = trpc.post.all.useQuery();
 
   const deletePostMutation = trpc.post.delete.useMutation({
-    onSettled: () => utils.post.all.invalidate().then(),
+    onSettled: () => trpcUtils.post.all.invalidate().then(),
   });
 
   return (
@@ -113,7 +113,7 @@ export default function Index() {
         </Text>
 
         <Pressable
-          onPress={() => void utils.post.all.invalidate()}
+          onPress={() => void trpcUtils.post.all.invalidate()}
           className="flex items-center rounded-lg bg-primary p-2"
         >
           <Text className="text-foreground"> Refresh posts</Text>
@@ -123,7 +123,6 @@ export default function Index() {
           <Text className="font-semibold italic text-primary">
             Press on a post
           </Text>
-          <Text className="text-foreground">Hi {data}</Text>
         </View>
 
         <FlashList
