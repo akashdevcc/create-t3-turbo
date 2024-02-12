@@ -22,7 +22,7 @@ apps
   |  ├─ React Native using React 18
   |  ├─ Navigation using Expo Router
   |  ├─ Tailwind using Nativewind
-  |  └─ Typesafe API calls using tRPC
+  |  └─ tRPC 11 based E2E Typesafe API client
   ├─ nextjs
   |  ├─ Next.js 14
   |  ├─ React 18
