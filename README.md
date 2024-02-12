@@ -22,15 +22,15 @@ apps
   |  ├─ React Native using React 18
   |  ├─ Navigation using Expo Router
   |  ├─ Tailwind using Nativewind
-  |  └─ tRPC 11 based E2E Typesafe API client
+  |  └─ tRPC 11 - E2E Typesafe API client
   ├─ nextjs
   |  ├─ Next.js 14
   |  ├─ React 18
   |  ├─ Tailwind CSS
-  |  └─ tRPC 11 based E2E Typesafe API Server & Client
+  |  └─ tRPC 11 - E2E Typesafe API Server & Client
   └─ server
      ├─ Fastify 4
-     └─ tRPC 11 based E2E Typesafe API Server
+     └─ tRPC 11 - E2E Typesafe API Server
 packages
   ├─ api
   |  └─ tRPC v11 router definition
@@ -63,6 +63,7 @@ To get it running, follow the steps below:
 
 ### 1. Prerequisites
 
+- Docker Desktop or Docker Engine
 - Node v20.10.0
 
   Use a "Node Version Manager (NVM)"
