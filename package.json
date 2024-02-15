@@ -32,5 +32,8 @@
     "overrides": {
       "@auth/core": "0.20.0"
     }
+  },
+  "dependencies": {
+    "@changesets/cli": "^2.27.1"
   }
 }
