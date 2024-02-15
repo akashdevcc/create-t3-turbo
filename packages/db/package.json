@@ -1,6 +1,6 @@
 {
   "name": "@acme/db",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "private": true,
   "type": "module",
   "exports": {
@@ -16,14 +16,14 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "@acme/schema": "workspace:^0.1.0",
+    "@acme/schema": "workspace:^0.2.0",
     "drizzle-orm": "^0.29.3",
     "mysql2": "^3.9.1"
   },
   "devDependencies": {
     "@acme/eslint-config": "workspace:^0.2.0",
-    "@acme/prettier-config": "workspace:^0.1.0",
-    "@acme/tsconfig": "workspace:^0.1.0",
+    "@acme/prettier-config": "workspace:^0.2.0",
+    "@acme/tsconfig": "workspace:^0.2.0",
     "dotenv-cli": "^7.3.0",
     "drizzle-kit": "^0.20.13",
     "eslint": "^8.56.0",

@@ -1,7 +1,7 @@
 {
   "name": "@acme/web",
   "private": true,
-  "version": "0.1.0",
+  "version": "0.2.0",
   "type": "module",
   "exports": {
     ".": "./src/index.ts",
@@ -34,9 +34,9 @@
   },
   "devDependencies": {
     "@acme/eslint-config": "workspace:^0.2.0",
-    "@acme/prettier-config": "workspace:^0.1.0",
-    "@acme/tailwind-config": "workspace:^0.1.0",
-    "@acme/tsconfig": "workspace:^0.1.0",
+    "@acme/prettier-config": "workspace:^0.2.0",
+    "@acme/tailwind-config": "workspace:^0.2.0",
+    "@acme/tsconfig": "workspace:^0.2.0",
     "@types/react": "^18.2.48",
     "eslint": "^8.56.0",
     "prettier": "^3.1.1",

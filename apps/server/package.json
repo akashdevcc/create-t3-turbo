@@ -1,6 +1,6 @@
 {
   "name": "@acme/server",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "private": true,
   "type": "module",
   "main": "dist/index.cjs",
@@ -18,8 +18,8 @@
     "lint": "echo 'Add lint script here'"
   },
   "dependencies": {
-    "@acme/api": "workspace:^0.1.0",
-    "@acme/db": "workspace:^0.1.0",
+    "@acme/api": "workspace:^0.2.0",
+    "@acme/db": "workspace:^0.2.0",
     "@fastify/autoload": "^5.0.0",
     "@fastify/sensible": "^5.0.0",
     "@trpc/server": "11.0.0-next-beta.236",
@@ -30,8 +30,8 @@
   },
   "devDependencies": {
     "@acme/eslint-config": "workspace:^0.2.0",
-    "@acme/prettier-config": "workspace:^0.1.0",
-    "@acme/tsconfig": "workspace:^0.1.0",
+    "@acme/prettier-config": "workspace:^0.2.0",
+    "@acme/tsconfig": "workspace:^0.2.0",
     "@types/node": "^20.10.6",
     "dotenv-cli": "^7.3.0",
     "nodemon": "^3.0.3",
