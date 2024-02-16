@@ -33,6 +33,7 @@
     "schema",
     "logging",
     "wiki",
-    "changeset"
+    "changeset",
+    "storybook"
   ]
 }
