@@ -1,11 +1,11 @@
 import type { Meta, StoryObj } from "@storybook/react";
 
-import { Post } from "@acme/native";
+import LocalPost from "./LocalPost";
 
 const meta = {
-  title: "Another Post",
-  component: Post,
-} satisfies Meta<typeof Post>;
+  title: "Local Post",
+  component: LocalPost,
+} satisfies Meta<typeof LocalPost>;
 
 export default meta;
 
@@ -13,7 +13,7 @@ type Story = StoryObj<typeof meta>;
 
 export const Basic: Story = {
   args: {
-    title: "Another title",
-    content: "Another content",
+    title: "Local title",
+    content: "Local content",
   },
 };
