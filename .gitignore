@@ -21,7 +21,8 @@ next-env.d.ts
 .expo/
 dist/
 expo-env.d.ts
-apps/expo/.gitignore
+# apps/expo/.gitignore
+# storybooks/native-storybook/.gitignore
 
 # production
 build
