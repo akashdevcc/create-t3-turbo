@@ -19,7 +19,7 @@
     "storybook:android": "cross-env STORYBOOK_ENABLED='true' expo start --android"
   },
   "dependencies": {
-    "@acme/native": "workspace:^0.1.0",
+    "@acme/native": "workspace:^0.2.0",
     "@expo/metro-config": "^0.17.3",
     "@react-native-async-storage/async-storage": "^1.21.0",
     "@shopify/flash-list": "1.6.3",
@@ -44,14 +44,15 @@
     "react-native-reanimated": "~3.6.2",
     "react-native-safe-area-context": "~4.8.2",
     "react-native-screens": "~3.29.0",
-    "superjson": "2.2.1"
+    "superjson": "2.2.1",
+    "tailwindcss": "^3.4.0"
   },
   "devDependencies": {
-    "@acme/api": "workspace:^0.1.0",
+    "@acme/api": "workspace:^0.2.0",
     "@acme/eslint-config": "workspace:^0.2.0",
-    "@acme/prettier-config": "workspace:^0.1.0",
-    "@acme/tailwind-config": "workspace:^0.1.0",
-    "@acme/tsconfig": "workspace:^0.1.0",
+    "@acme/prettier-config": "workspace:^0.2.0",
+    "@acme/tailwind-config": "workspace:^0.2.0",
+    "@acme/tsconfig": "workspace:^0.2.0",
     "@babel/core": "^7.23.9",
     "@babel/preset-env": "^7.23.9",
     "@babel/runtime": "^7.23.9",
@@ -59,7 +60,6 @@
     "@types/react": "^18.2.48",
     "eslint": "^8.56.0",
     "prettier": "^3.1.1",
-    "tailwindcss": "^3.4.0",
     "typescript": "^5.3.3"
   },
   "eslintConfig": {

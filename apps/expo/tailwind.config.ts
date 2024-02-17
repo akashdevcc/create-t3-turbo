@@ -5,6 +5,6 @@ import nativewind from "nativewind/preset";
 import baseConfig from "@acme/tailwind-config/native";
 
 export default {
-  content: ["./src/**/*.{ts,tsx}"],
+  content: ["./src/**/*.{ts,tsx}", "../../packages/native/src/**/*.{ts,tsx}"],
   presets: [baseConfig, nativewind],
 } satisfies Config;

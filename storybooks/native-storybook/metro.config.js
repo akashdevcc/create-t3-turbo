@@ -42,6 +42,8 @@ function withMonorepoPaths(config) {
   ];
 
   // #3 - Force resolving nested modules to the folders below
+  //    - Added to enable nativewind to render styles of components residing in different package than the app's package.
+  //    - See issue: https://github.com/marklawlor/nativewind/issues/734#issuecomment-1898824306
   config.resolver.disableHierarchicalLookup = true;
 
   return config;
